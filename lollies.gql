@@ -1,0 +1,12 @@
+type lolly {
+  flavourTop: String!
+  flavourMiddle: String!
+  flavourBottom: String!
+  recipientName: String!
+  message: String!
+  sendersName: String!
+}
+
+type Query {
+  allLollies: [lolly!]!
+}

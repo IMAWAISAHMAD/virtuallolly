@@ -1,0 +1,19 @@
+{
+  "name": "virtuallolly",
+  "version": "1.0.0",
+  "description": "Serverless VirtualLolly App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "develop": "gatsby develop"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "gatsby": "^2.32.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
