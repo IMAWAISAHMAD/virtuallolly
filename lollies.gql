@@ -4,7 +4,8 @@ type lolly {
   flavourBottom: String!
   recipientName: String!
   message: String!
-  sendersName: String!
+  senderName: String!
+  lollyPath: String!
 }
 
 type Query {
