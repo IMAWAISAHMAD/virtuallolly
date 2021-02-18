@@ -1,14 +1,15 @@
 const query =  require('./utils/query');
-
+const {nanoid} = require('nanoid');
 const CREATE_LOLLY = `
-    mutation($flavourTop:String!,$flavourMiddle:String!,$flavourBottom:String!,$recipientName:String!,$message:String!,$sendersName:String!){
+    mutation($flavourTop:String!,$flavourMiddle:String!,$flavourBottom:String!,$recipientName:String!,$message:String!,$senderName:String!,$lollyPath:String!){
         createLolly(data:{
             flavourTop:$flavourTop,
             flavourMiddle:$flavourMiddle,
             flavourBottom:$flavourBottom,
             recipientName:$recipientName,
             message:$message,
-            sendersName:$sendersName
+            senderName:$senderName,
+            lollyPath:$lollyPath
 
         }),{
             _id,
@@ -17,16 +18,17 @@ const CREATE_LOLLY = `
             flavourBottom,
             recipientName,
             message,
-            sendersName
+            senderName,
+            lollyPath
         }
     }
 `   
 
 exports.handler = async event => {
-  
-  const { flavourTop,flavourMiddle,flavourBottom,recipientName,message,sendersName } = JSON.parse(event.body);
+  const { flavourTop,flavourMiddle,flavourBottom,recipientName,message,senderName } = JSON.parse(event.body);
+  const lollyPath = nanoid();
   const { data, errors } = await query(
-    CREATE_LOLLY, {flavourTop,flavourMiddle,flavourBottom,recipientName,message,sendersName});
+    CREATE_LOLLY, {flavourTop,flavourMiddle,flavourBottom,recipientName,message,senderName,lollyPath});
  
   if (errors) {
     return {
