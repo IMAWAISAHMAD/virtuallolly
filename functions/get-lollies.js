@@ -11,7 +11,8 @@ const GET_LOLLIES = `
           flavourBottom
           recipientName
           message
-          sendersName
+          senderName
+          lollyPath
         }
       } 
    }  
