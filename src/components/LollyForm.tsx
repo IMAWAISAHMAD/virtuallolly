@@ -23,7 +23,7 @@ export default function CreateLolly() {
             senderName:senderRef.current.value
         } 
         console.log(lolly);
-        await axios.post('/api/create-lolly',lolly);
+        await axios.post('/new',lolly);
     }
     return (
         <div>
