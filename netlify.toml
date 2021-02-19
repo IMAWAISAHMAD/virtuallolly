@@ -1,7 +1,21 @@
 [build]
     functions = "functions"
  
+
+
 [[redirects]]
    from = "/api/*"
    to = "/.netlify/functions/:splat"
+   status = 200 
+
+
+[[redirects]]
+   from = "/new"
+   to = "/.netlify/functions/newLolly"
    status = 200
+  
+
+[[redirects]]
+  from = "/lolly/*"
+  to = "/.netlify/functions/viewLolly?id=:splat"
+  status = 302
