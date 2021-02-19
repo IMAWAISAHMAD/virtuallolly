@@ -10,4 +10,5 @@ type lolly {
 
 type Query {
   allLollies: [lolly!]!
+  lolliesByPath(lollyPath: String!) : [lolly!]
 }
