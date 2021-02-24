@@ -1,12 +1,8 @@
 const query = require("./utils/query");
-const lollyTemplate = require("./lollyTemplate.js");
  
-exports.handler = async event => {
-  const path = event.queryStringParameters.id.replace("/", "");
-  console.log(typeof(path));
-  const VIEW_LOLLY = `
-   query {
-    lolliesByPath(lollyPath:"${path}") {
+const VIEW_LOLLY = `
+   query($path:String!) {
+    lolliesByPath(lollyPath:$path) {
         data {
           _id
           flavourTop
@@ -20,7 +16,11 @@ exports.handler = async event => {
       } 
    }  
 `;
-  const { data, errors } = await query(VIEW_LOLLY);
+
+exports.handler = async event => {
+  const path = event.queryStringParameters.id.replace("/", "");
+  
+  const { data, errors } = await query(VIEW_LOLLY,{path});
 
 
   if(errors){
@@ -33,12 +33,12 @@ exports.handler = async event => {
       }
     };
   }
-  const lollyByPath = data.lolliesByPath.data;
-  console.log(lollyByPath);
+/*   const lollyByPath = data.lolliesByPath.data;
+  console.log(lollyByPath); */
 // if found return a view
 return{
     statusCode: 200,
-    body: lollyTemplate(lollyByPath)
+    body: JSON.stringify({lollyByPath:data.lolliesByPath.data})
 };
 
  
