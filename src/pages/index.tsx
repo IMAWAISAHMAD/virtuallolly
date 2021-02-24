@@ -1,30 +1,57 @@
-import React,{useState,useEffect} from 'react';   
-import Lollies from '../components/Lollies'; 
-import Header from '../components/Header';
-import {Link} from 'gatsby';
-import axios from 'axios';
+import React from "react";
+import  Header  from "../components/Header";
+import Lolly from "../components/Lolly";
+import { Button } from "theme-ui";
+import { Link } from "gatsby";
 
-export default () => {    
-  const [lollies,setLollies] = useState()
-  const [loading,setLoading] = useState(false)
-  useEffect(() => {
-      axios("/api/get-lollies").then(result => {
-        if (result.status !== 200) {
-          console.error("Error loading lollies");
-          console.error(result);
-          return;
-        }
-        setLollies(result.data.lollies);
-        setLoading(true);
-      });
-    }, [loading]);
-  
+export default () => {
   return (
-    <div  style={{textAlign:'center'}}>    
-      <Header/>
-      <h1>Virtuallolly...</h1>
-      {loading ?  <Lollies data={lollies}/> : <h1>Loading....</h1> }
-      <Link to={'/create'}>Send Virtual Lolly To Friends</Link>
-    </div>        
-  )    
-}
+    <div style={{ margin: "40px 0px" }}>
+      <Header />
+      <div
+        style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
+      >
+        <Lolly
+          flavourTop="#d52358"
+          flavourMiddle="#e95946"
+          flavourBottom="#deaa43"
+        />
+        <Lolly
+          flavourTop="#d52358"
+          flavourMiddle="#e95946"
+          flavourBottom="#deaa43"
+        />
+        <Lolly
+          flavourTop="#d52358"
+          flavourMiddle="#e95946"
+          flavourBottom="#deaa43"
+        />
+        <Lolly
+          flavourTop="#d52358"
+          flavourMiddle="#e95946"
+          flavourBottom="#deaa43"
+        />
+        <Lolly
+          flavourTop="#d52358"
+          flavourMiddle="#e95946"
+          flavourBottom="#deaa43"
+        />
+      </div>
+      <div style={{ textAlign: "center", marginTop: "40px" }}>
+        <Button
+          as={Link}
+          to="/createLolly"
+          sx={{
+            boxShadow: "0px 0px 12px",
+            borderRadius: "20px",
+            backgroundColor:'orange',
+            fontWeight:'bold',
+            fontSize:'16'
+          }}
+        >
+          Make a new lolly to send to a friend
+        </Button>
+      </div>
+    </div>
+  );
+};
