@@ -5,16 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "gatsby develop"
+    "develop": "gatsby develop",
+    "clean": "gatsby clean"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
+    "formik": "^2.2.6",
     "gatsby": "^2.32.3",
     "nanoid": "^3.1.20",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "theme-ui": "^0.3.5",
+    "yup": "^0.32.9"
   }
 }
