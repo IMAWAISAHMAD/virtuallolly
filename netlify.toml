@@ -19,3 +19,4 @@
   from = "/lolly/*"
   to = "/.netlify/functions/viewLolly?id=:splat"
   status = 302
+
