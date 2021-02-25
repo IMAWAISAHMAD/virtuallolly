@@ -12,29 +12,29 @@ export default () => {
         style={{ display: "flex", justifyContent: "center", marginTop: "30px" }}
       >
         <Lolly
-          flavourTop="#d52358"
-          flavourMiddle="#e95946"
-          flavourBottom="#deaa43"
+          flavourTop="#a3ba57"
+          flavourMiddle="#8e947b"
+          flavourBottom="#36382f"
         />
         <Lolly
-          flavourTop="#d52358"
-          flavourMiddle="#e95946"
-          flavourBottom="#deaa43"
+          flavourTop="#d6d627"
+          flavourMiddle="#919114"
+          flavourBottom="#424205"
         />
         <Lolly
-          flavourTop="#d52358"
-          flavourMiddle="#e95946"
-          flavourBottom="#deaa43"
+          flavourTop="#f28507"
+          flavourMiddle="#e8b982"
+          flavourBottom="#362716"
         />
         <Lolly
-          flavourTop="#d52358"
-          flavourMiddle="#e95946"
-          flavourBottom="#deaa43"
+          flavourTop="#1e07ed"
+          flavourMiddle="#0e0657"
+          flavourBottom="#030114"
         />
         <Lolly
-          flavourTop="#d52358"
-          flavourMiddle="#e95946"
-          flavourBottom="#deaa43"
+          flavourTop="#ab05f2"
+          flavourMiddle="#4c046b"
+          flavourBottom="#240233"
         />
       </div>
       <div style={{ textAlign: "center", marginTop: "40px" }}>
@@ -42,11 +42,14 @@ export default () => {
           as={Link}
           to="/createLolly"
           sx={{
-            boxShadow: "0px 0px 12px",
+            fontSize: 20,
+            fontFamily: "Yellowtail",
+            color: "white",
+            backgroundColor:"black",
             borderRadius: "20px",
-            backgroundColor:'orange',
-            fontWeight:'bold',
-            fontSize:'16'
+            textShadow: "#e0f 0 0 8px",
+            textAlign: "center",
+            padding:15
           }}
         >
           Make a new lolly to send to a friend
