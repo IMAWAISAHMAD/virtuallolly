@@ -37,7 +37,6 @@ export default () => {
     const [flavourBottom,setFlavourBottom] = useState('#deaa43');
 
     const createLolly = async (values) => { 
-        console.log(values);
         const {recipientName,message,senderName} = values;
         const lolly = {
             flavourTop,
@@ -47,7 +46,6 @@ export default () => {
             message,
             senderName,
         } 
-        console.log(lolly);
         await axios.post('/new',lolly).then(res=>{
         if (res.status !== 200) {
             console.error("Error Finding lolly");
@@ -121,7 +119,7 @@ export default () => {
                     resetForm({
                         values: { recipientName: "", message: "", senderName: ""  },
                     });
-                    console.log(values);
+
                     createLolly(values);
 
                     }}

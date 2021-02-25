@@ -5,7 +5,7 @@ import Lolly from "./Lolly";
 import { Link } from "gatsby";
 
 export default (props) => {
-  console.log('Lollytemplate received props: ',props);
+ 
   return (
     <div>
       <Header />
