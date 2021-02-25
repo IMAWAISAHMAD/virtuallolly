@@ -1,12 +1,15 @@
 import React,{useEffect,useState} from "react";
 import LollyTemplate from '../components/LollyTemplate';
 import axios from 'axios';
+import {Spinner} from 'theme-ui';
+
 export default (props) => {
+
   const[data,setData] = useState();
   const [loading,setLoading] = useState(false);
   const refId = props.location.search;
   const path = refId.slice(4, 25)
-  console.log('LollyPath: ',path);
+
   useEffect(()=>{
     const getData=async()=>{
       await axios(`/lolly/${path}`).then(res=>{
@@ -15,8 +18,6 @@ export default (props) => {
           console.error(res);
           return;
         }
-
-        console.log(res.data.lollyByPath[0]);
         const response  = res.data.lollyByPath[0];
         setData(response);
         setLoading(true);
@@ -24,11 +25,12 @@ export default (props) => {
     
   }
   getData();
+  
 },[])
   
   return (
     <>
-      {loading ? <LollyTemplate data={data}/> : <div>Loading....Please Wait...</div> }  
+      {loading ? <LollyTemplate data={data}/> :<div style={{textAlign:'center'}}><Spinner/></div> }  
     </>
   );
 };
