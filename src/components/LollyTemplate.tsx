@@ -33,7 +33,7 @@ export default (props) => {
               sx={{
                 fontSize: 3,
                 fontFamily: "Yellowtail",
-                color: "white",
+                color:"black",
                 textShadow: "#e0f 0 0 8px",
                 textAlign: "center",
               }}
@@ -48,7 +48,6 @@ export default (props) => {
                 textShadow: "#e0f 0 0 8px",
                 textAlign: "center",
                 textDecoration: "underline",
-                backgroundColor: "#272727",
               }}
             >{`https://vpopsicle.netlify.app/viewLolly?id=${props.data.lollyPath}`}</Text>
             <br />
