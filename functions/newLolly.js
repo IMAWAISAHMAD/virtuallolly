@@ -34,14 +34,14 @@ exports.handler = async event => {
     if(data){
     console.log('data: ',data);
 
-    // Trigger a new build to freeze this lolly forever
+   /* // Trigger a new build to freeze this lolly forever
      axios.post('https://api.netlify.com/build_hooks/602e3ac0139216d59faf3f11')
     .then(function (response) {
       console.log('build hook response: ',response);
     })
     .catch(function (error) {
       console.error('build hook response: ',error);
-    });
+    });*/
 
     // Success! Go to a page to view the result
     return{
